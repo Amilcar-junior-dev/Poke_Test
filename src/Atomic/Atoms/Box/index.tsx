@@ -22,7 +22,6 @@ export const BoxHeader = styled.View<BoxHeaderProps>`
 `
 
 export const Box = styled.View<BoxProps>`
-    flex: ${({flex})=> flex ? flex : null};
     width:${({ width }) => width ? width : '100%'};
     height:${({ height }) => height ? height : '10px'};
     padding:${({ pd }) => pd ? pd : 0}px;

@@ -26,7 +26,6 @@ export interface BoxHeaderProps {
 }
 
 export interface BoxProps {
-    flex?: number
     width?: string | number
     height?: string | number 
     pd?: number 

@@ -1,14 +1,14 @@
 import React from 'react';
-import { Box } from '../../Atomic/Atoms/Box'
-import { Text } from '../../Atomic/Atoms/Text'
+import { BoxContainer } from '../../Atomic/Atoms/Box'
+import { Text } from '../../Atomic/Atoms/Text';
 
 const Home = () => {
     return (
-        <Box>
+        <BoxContainer>
             <Text>
                 HELLO WORD....
             </Text>
-        </Box>
+        </BoxContainer>
     )
 }
 export default Home;
