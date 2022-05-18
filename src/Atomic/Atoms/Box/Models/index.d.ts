@@ -3,7 +3,6 @@ export interface ContainerProps {
     flex?: number
     width?: string | number
     heigth?: string | number
-    padding?: string | number
     alignItems?: 'center' | 'stretch' | 'flex-start' | 'flex-end' | 'baseline'
     justifyContent?: 'baseline' | 'center' | 'flex-end'|'flex-start'
     flexDirections?: 'row' | 'column' | 'row-reverse' |'column-reverse'
@@ -22,6 +21,11 @@ export interface BoxHeaderProps {
     marginTop?: string | number 
     marginLeft?: string | number
     marginRight?: string | number
+    borderRadiusTopLeft?: string | number 
+    borderRadiusTopRight?: string | number
+    borderRadiusBottomLeft?: string | number
+    borderRadiusBottomRight?: string | number
+
     
 }
 
