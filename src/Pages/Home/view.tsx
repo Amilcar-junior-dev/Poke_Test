@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <Box>
             <Text>
-                HELLO WORD
+                HELLO WORD....
             </Text>
         </Box>
     )
