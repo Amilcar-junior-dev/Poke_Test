@@ -1,6 +1,5 @@
-export interface PropsHome {
+export interface PropsHeader{
     user?: string
     message?: string
-    title?: string
     children?: any
 }
