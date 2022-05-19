@@ -5,6 +5,14 @@ import { ContainerProps, BoxProps, BoxHeaderProps } from './Models'
 export const BoxContainer = styled.View<ContainerProps>`
     flex: 1;
     background-color:${({ backgroundColor }) => backgroundColor ? backgroundColor : '#ffffff'};
+    margin-top: ${({ marginTop }) => marginTop ? marginTop : '0px'};
+    margin-bottom: ${({ marginBottom }) => marginBottom ? marginBottom : '0px'};
+    margin-left: ${({ marginLeft }) => marginLeft ? marginLeft : '0px'};
+    margin-right: ${({ marginRight }) => marginRight ? marginRight : '0px'};
+    border-top-left-radius: ${({borderRadiusTopLeft})=> borderRadiusTopLeft ? borderRadiusTopLeft : '0px'};
+    border-top-right-radius: ${({borderRadiusTopRight})=> borderRadiusTopRight ? borderRadiusTopRight : '0px'};
+    border-bottom-left-radius: ${({borderRadiusBottomLeft})=> borderRadiusBottomLeft ? borderRadiusBottomLeft : '0px'};
+    border-bottom-right-radius: ${({borderRadiusBottomRight})=> borderRadiusBottomRight ? borderRadiusBottomRight : '0px'};
 `
 export const BoxHeader = styled.View<BoxHeaderProps>`
     padding: ${({padding})=> padding ? padding : '0px'};
@@ -42,6 +50,7 @@ export const Box = styled.View<BoxProps>`
     border-bottom-right-radius: ${({borderRadiusBottomRight})=> borderRadiusBottomRight ? borderRadiusBottomRight : '0px'};
     border-color: ${({ borderColor }) => borderColor ? borderColor : null};
     border-width: ${({ borderWidth }) => borderWidth ? borderWidth : '0px'};
+    border-right-width:${({borderRightWidth})=>borderRightWidth ? borderRightWidth : '0px'};
     position:${({ position }) => position ? position : 'relative'} ;
     flex-direction: ${({ flexDirections }) => flexDirections ? flexDirections : 'column'};
 `
