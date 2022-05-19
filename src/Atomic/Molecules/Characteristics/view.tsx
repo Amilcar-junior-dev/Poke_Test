@@ -100,8 +100,6 @@ const Caracteristics: React.FC<PropsCaracteristics> = ({
                     {caracteristicsStrengthsAndWeaknesses}
                 </Text>
             </Box>
-
-          
         </Box>
     )
 }
