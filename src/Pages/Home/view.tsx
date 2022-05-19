@@ -1,4 +1,5 @@
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
 import { BoxContainer, Box } from '../../Atomic/Atoms/Box'
 import { Text } from '../../Atomic/Atoms/Text';
 import Header from '../../Atomic/Molecules/Header';
@@ -9,6 +10,7 @@ import Body from '../../Atomic/Molecules/Body';
 const Home: React.FC<PropsHome> = ({
     title,
 }) => {
+
     return (
         <BoxContainer backgroundColor='#ffffff'>
             <Header />
@@ -22,10 +24,9 @@ const Home: React.FC<PropsHome> = ({
                 </Text>
             </Box>
 
-            <Body >
-                
-            </Body>
+            <Body>
 
+            </Body>
             <Footer />
         </BoxContainer>
     )
