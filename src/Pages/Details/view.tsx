@@ -1,4 +1,5 @@
 import React from 'react';
+import { ScrollView } from 'react-native';
 import { BoxContainer, Box } from '../../Atomic/Atoms/Box';
 import { Text } from '../../Atomic/Atoms/Text';
 import Description from '../../Atomic/Molecules/Description';
@@ -13,20 +14,21 @@ const Details: React.FC<PropsDetails> = ({
     return (
         <BoxContainer
             backgroundColor='#20f5ca'>
+
             <Box
+
                 justifyContent='flex-end'
                 height='100%'>
                 <Box
                     height='450px'
-                    backgroundColor='#fff'
-                    borderRadiusTopLeft='25px'
-                    borderRadiusTopRight='25px'>
-                   <Description />
-                   <Measurements />
-                   <Caracteristics />
-
-                   
-
+                    backgroundColor='#ffffff'
+                    borderRadiusTopLeft='15px'
+                    borderRadiusTopRight='15px'>
+                    <ScrollView>
+                        <Description />
+                        <Measurements />
+                        <Caracteristics />
+                    </ScrollView>
                 </Box>
             </Box>
         </BoxContainer>
@@ -34,9 +36,3 @@ const Details: React.FC<PropsDetails> = ({
 }
 export default Details;
 
-/*
-
-
-
-
-*/

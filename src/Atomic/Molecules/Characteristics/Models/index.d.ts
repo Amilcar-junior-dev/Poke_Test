@@ -19,5 +19,7 @@ export interface PropsCaracteristics {
     velocity?: string | number
     sum?: string | number
     strengthsAndWeaknesses?: string
+    caracteristicsStrengthsAndWeaknesses?: string
     children?: any
+    itemCaracteristics?: any
 }
