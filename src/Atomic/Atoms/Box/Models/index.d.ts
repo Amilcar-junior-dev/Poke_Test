@@ -7,6 +7,14 @@ export interface ContainerProps {
     justifyContent?: 'baseline' | 'center' | 'flex-end'|'flex-start'
     flexDirections?: 'row' | 'column' | 'row-reverse' |'column-reverse'
     backgroundColor?: string
+    marginBottom?: string | number 
+    marginTop?: string | number 
+    marginLeft?: string | number
+    marginRight?: string | number
+    borderRadiusTopLeft?: string | number 
+    borderRadiusTopRight?: string | number
+    borderRadiusBottomLeft?: string | number
+    borderRadiusBottomRight?: string | number
 }
 
 export interface BoxHeaderProps {
@@ -47,6 +55,7 @@ export interface BoxProps {
     borderRadiusBottomRight?: string | number
     borderColor?: string 
     borderWidth?: string
+    borderRightWidth?: string | number
     position?: 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky'
     flexDirections?: 'row' | 'column' | 'row-reverse' |'column-reverse'
 }
