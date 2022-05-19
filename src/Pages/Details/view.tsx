@@ -3,12 +3,12 @@ import { BoxContainer, Box } from '../../Atomic/Atoms/Box';
 import { Text } from '../../Atomic/Atoms/Text';
 import Description from '../../Atomic/Molecules/Description';
 import Measurements from '../../Atomic/Molecules/Measurements';
+import Caracteristics from '../../Atomic/Molecules/Characteristics';
 import { PropsDetails } from './Models';
 
 
 
 const Details: React.FC<PropsDetails> = ({
-    description,
 }) => {
     return (
         <BoxContainer
@@ -23,6 +23,8 @@ const Details: React.FC<PropsDetails> = ({
                     borderRadiusTopRight='25px'>
                    <Description />
                    <Measurements />
+                   <Caracteristics />
+
                    
 
                 </Box>
