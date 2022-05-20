@@ -7,6 +7,10 @@ import { BoxTouch } from '../../../Atoms/Box';
 
 const PokeCard: React.FC<PropsPokeCard> = ({
     name,
+    power,
+    type,
+    color,
+    image,
     onPress
 }) => {
 
@@ -20,7 +24,7 @@ const PokeCard: React.FC<PropsPokeCard> = ({
         borderRadiusTopRight='10px'
         borderRadiusBottomLeft='10px'
         borderRadiusBottomRight='10px'>
-            <Box backgroundColor='#4de0ac'
+            <Box backgroundColor={color}
                 pd={10}
                 width='100%'
                 height='120px'
@@ -31,8 +35,6 @@ const PokeCard: React.FC<PropsPokeCard> = ({
                 borderRadiusBottomLeft='10px'
                 borderRadiusBottomRight='10px'>
                 <Box
-                    height='25px'
-                    marginTop='5px'
                     justifyContent='center'>
                     <Text
                         color='#fff'
@@ -47,7 +49,7 @@ const PokeCard: React.FC<PropsPokeCard> = ({
                         width='50%'
                         height='75px'>
                         <Box
-                            backgroundColor='#97eacd'
+                            backgroundColor='#FFFFFF30'
                             width='50px'
                             alignItems='center'
                             justifyContent='center'
@@ -58,11 +60,11 @@ const PokeCard: React.FC<PropsPokeCard> = ({
                             borderRadiusBottomLeft='10px'
                             borderRadiusBottomRight='10px' >
                             <Text color='#fff'>
-                                { }
+                                {type}
                             </Text>
                         </Box>
                         <Box
-                            backgroundColor='#97eacd'
+                            backgroundColor='#FFFFFF30'
                             width='60px'
                             alignItems='center'
                             justifyContent='center'
@@ -73,7 +75,7 @@ const PokeCard: React.FC<PropsPokeCard> = ({
                             borderRadiusBottomLeft='10px'
                             borderRadiusBottomRight='10px' >
                             <Text color='#fff'>
-                                Venenoso
+                                {power}
                             </Text>
                         </Box>
 
@@ -84,10 +86,11 @@ const PokeCard: React.FC<PropsPokeCard> = ({
 
                         alignItems='center'
                         justifyContent='flex-end'>
-                        <Image source={require('../../../../Assets/buba.png')}
+                        <Image source={{uri: image}}
                             style={{
                                 width: 70,
-                                height: 60
+                                height: 80,
+                                marginBottom: 4
                             }} />
                     </Box>
                 </Box>

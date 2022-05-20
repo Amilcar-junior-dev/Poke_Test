@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
-import { ScrollView } from 'react-native';
-import { BoxContainer, Box } from '../../Atomic/Atoms/Box'
+import { FlatList, Dimensions, ActivityIndicator, Platform } from 'react-native';
+import normalize from "react-native-normalize"
+
+import { Box } from '../../Atomic/Atoms/Box'
 import { Text } from '../../Atomic/Atoms/Text';
 import PokeCard from '../../Atomic/Molecules/Cards/PokeCard'
 import Header from '../../Atomic/Molecules/Header';
@@ -10,35 +12,62 @@ import { Context } from '../../Context';
 
 const Home: React.FC<PropsHome> = ({
     title,
-
 }) => {
-    const { pokemonValue, SelectedPokemon } = useContext(Context);
+    const {
+        pokemonValue,
+        SelectedPokemon,
+        getPokemon,
+        loading,
+    } = useContext(Context);
+    const { height } = Dimensions.get("window")
 
     return (
-        <ScrollView showsVerticalScrollIndicator={false}>
-            <BoxContainer backgroundColor='#ffffff'>
-                <Header />
-                <Box
-                    pd={10}
-                    height='100px'>
-                    <Text
-                        fWeight='bold'
-                        fSize={20}>
-                        {title}
-                    </Text>
-                </Box>
-
-                <Box
-                    justifyContent='center'
-                    wrap='wrap'
-                    flexDirections='row'>
-                    {pokemonValue.results?.map((item, index) => (
-                        <PokeCard key={index} name={item.name} onPress={() => SelectedPokemon(index + 1)} />
-                    ))}
-                </Box>
-                <Footer />
-            </BoxContainer>
-        </ScrollView>
+        <FlatList
+            data={pokemonValue}
+            ListHeaderComponent={
+                <>
+                    <Header />
+                    <Box
+                        pd={10}
+                        marginTop="10px"
+                        height='100px'>
+                        <Text
+                            fWeight='bold'
+                            fSize={20}>
+                            {title}
+                        </Text>
+                    </Box>
+                </>
+            }
+            ListFooterComponent={
+                <>
+                    <Footer />
+                    <ActivityIndicator animating={loading} />
+                </>
+            }
+            showsVerticalScrollIndicator={false}
+            onEndReached={getPokemon}
+            onEndReachedThreshold={0.03}
+            numColumns={2}
+            style={{
+                marginBottom: normalize(20)
+            }}
+            columnWrapperStyle={{
+                width: '100%',
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}
+            renderItem={({ item, index }) => (
+                <PokeCard
+                    key={index}
+                    name={item.name}
+                    type={item.types[0].type.name}
+                    power={item.abilities[0].ability.name}
+                    color={index.toString()}
+                    image={item.sprites.other.home.front_default}
+                    onPress={() => SelectedPokemon(index)} />
+            )}>
+        </FlatList >
     )
 }
 export default Home;

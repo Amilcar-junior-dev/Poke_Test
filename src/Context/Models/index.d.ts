@@ -1,7 +1,6 @@
 export interface PropsContext {
-    user?: string
-    title?: string
-    children?: any
-    results?: any
-    selectedPokemon?: () => any
+    pokemonValue: any;
+    SelectedPokemon: (id: number) => void;
+    getPokemon: () => void;
+    loading: boolean
 }
