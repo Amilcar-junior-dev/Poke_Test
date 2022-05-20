@@ -4,4 +4,6 @@ export interface PropsHome {
     title?: string
     children?: any
     results?: any
+    pokemonValue?: any
+    SelectedPokemon ?: any 
 }

@@ -1,37 +1,38 @@
-import React,{createContext,  useEffect, useState} from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { PropsContext } from './Models';
-import api from '../Utils/axios'
+import api from '../Utils/axios';
+
 export const Context = createContext({});
 
-
-const ContextProvider:React.FC<PropsContext>=({
+const ContextProvider: React.FC<PropsContext> = ({
     children,
     results
-})=>{
-    const [pokemonValue, setPokemonValue] = useState([])
+}) => {
+    const [pokemonValue, setPokemonValue] = useState([]);
+
     useEffect(() => {
 
         async function getResponse() {
-
             try {
                 const response = await api.get(`/api/v2/pokemon`)
-                setPokemonValue(response.data) 
-                console.log('test ',response.data)
-               
-            } catch (error) {
-              alert('error from api')
+                setPokemonValue(response.data)
 
+            } catch (error) {
+                alert('error from api')
             }
         }
         getResponse();
-
     }, [])
 
+    const SelectedPokemon = (id: string) => {
 
- return(
-     <Context.Provider value={pokemonValue}>
-         {children}
-     </Context.Provider>
- )
+        console.log(id)
+    }
+
+    return (
+        <Context.Provider value={{ pokemonValue, SelectedPokemon }}>
+            {children}
+        </Context.Provider>
+    )
 }
 export default ContextProvider;

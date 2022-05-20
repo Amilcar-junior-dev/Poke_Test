@@ -7,12 +7,11 @@ import { BoxTouch } from '../../../Atoms/Box';
 
 const PokeCard: React.FC<PropsPokeCard> = ({
     name,
-    pokemonValue,
+    onPress
 }) => {
-    console.log('teste pokemon', pokemonValue)
 
     return (
-        <BoxTouch onPress={() => { }}
+        <BoxTouch onPress={onPress}
         width='40%'
         height='120px'
         marginBottom='10px'

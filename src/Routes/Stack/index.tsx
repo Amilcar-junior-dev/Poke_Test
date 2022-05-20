@@ -12,8 +12,6 @@ const Stack = createNativeStackNavigator();
 export default function () {
     return (
         <NavigationContainer>
-            
-
             <Stack.Navigator initialRouteName='Home' screenOptions={{ headerShown: false }} >
 
                 <Stack.Screen name='Home' component={Home} />
@@ -21,9 +19,6 @@ export default function () {
                 <Stack.Screen name='PageInitial' component={PageInitial} />
 
             </Stack.Navigator>
-
-          
-
         </NavigationContainer>
     )
 }
