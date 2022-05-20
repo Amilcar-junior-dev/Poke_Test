@@ -58,4 +58,5 @@ export interface BoxProps {
     borderRightWidth?: string | number
     position?: 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky'
     flexDirections?: 'row' | 'column' | 'row-reverse' |'column-reverse'
+    FlatList?: any
 }

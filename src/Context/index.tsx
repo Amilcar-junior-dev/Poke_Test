@@ -14,7 +14,6 @@ function ContextProvider({children}){
                 console.log('test ',response.data)
                // https://pokeapi.co/api/v2/pokemon
                // ?offset=20&limit=20
-               
 
             } catch (error) {
               alert('error from api')
