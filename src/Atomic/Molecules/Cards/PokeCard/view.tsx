@@ -2,14 +2,13 @@ import React, { useContext } from 'react';
 import { Box } from '../../../Atoms/Box';
 import { Text } from '../../../Atoms/Text'
 import { Image } from '../../../Atoms/Image';
-import { Context } from '../../../../Context'
-
+import api from '../../../../Utils/axios'
 import { PropsPokeCard } from './Models';
 
 const PokeCard: React.FC<PropsPokeCard> = ({
-
+pokemonValue
 }) => {
-
+    console.log('teste pokemon',pokemonValue)
     return (
         <Box backgroundColor='#4de0ac'
             pd={10}
@@ -26,7 +25,7 @@ const PokeCard: React.FC<PropsPokeCard> = ({
                 <Text
                     color='#fff'
                     fSize={20}>
-                    Bulbasaur
+                        {pokemonValue.results?pokemonValue.results[0].name:'error'}
                 </Text>
             </Box>
             <Box
@@ -47,7 +46,7 @@ const PokeCard: React.FC<PropsPokeCard> = ({
                         borderRadiusBottomLeft='10px'
                         borderRadiusBottomRight='10px' >
                         <Text color='#fff'>
-                            Planta
+                            {}
                         </Text>
                     </Box>
                     <Box
