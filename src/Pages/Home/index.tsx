@@ -2,9 +2,7 @@ import React from 'react';
 import View from './view'
 import { PropsHome } from './Models';
 
-const Home: React.FC<PropsHome> = ({
-
-}) => {
+const Home: React.FC<PropsHome> = () => {
     return (
         <View
             user=' Ash Ketchum'

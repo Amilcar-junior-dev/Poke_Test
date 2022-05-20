@@ -2,35 +2,75 @@ import React, { createContext, useEffect, useState } from 'react';
 import { PropsContext } from './Models';
 import api from '../Utils/axios';
 
-export const Context = createContext({});
+export const Context = createContext<PropsContext>({});
 
-const ContextProvider: React.FC<PropsContext> = ({
+const ContextProvider = ({
     children,
-    results
 }) => {
     const [pokemonValue, setPokemonValue] = useState([]);
+    const [offset, setOffset] = useState(0)
+    const [loading, setLoading] = useState(false)
+    const [pokemon, setPokemon] = useState({})
 
     useEffect(() => {
-
-        async function getResponse() {
-            try {
-                const response = await api.get(`/api/v2/pokemon`)
-                setPokemonValue(response.data)
-
-            } catch (error) {
-                alert('error from api')
-            }
-        }
-        getResponse();
+        (async function () {
+            getPokemon();
+        })()
     }, [])
 
-    const SelectedPokemon = (id: string) => {
+    const getPokemon = async () => {
+        setLoading(true)
+        try {
+            const response = await api.get(`/api/v2/pokemon?limit=8&offset=${offset}`)
+            await reorderArray(response.data.results)
+            setOffset(offset + 8)
 
-        console.log(id)
+        } catch (error) {
+            alert('Falha ao buscar dados.')
+        }
+
+        setLoading(false)
+    }
+
+    const reorderArray = async (response) => {
+        if (pokemonValue.length > 0) {
+            const array = [...pokemonValue]
+            await response.map(async (item, index) => {
+                const { data } = await api.get(`/api/v2/pokemon/${offset + index + 1}`);
+                array.push({
+                    ...item,
+                    ...data
+                })
+            })
+
+            setPokemonValue(array)
+        } else {
+            const array = []
+            await response.map(async (item, index) => {
+                const { data } = await api.get(`/api/v2/pokemon/${index + 1}`);
+                array.push({
+                    ...item,
+                    ...data
+                })
+            })
+            setPokemonValue(array)
+        }
+    }
+
+    const SelectedPokemon = (id?: string) => {
+        setPokemon(pokemonValue[id])
+    }
+
+    const value: PropsContext = {
+        pokemonValue,
+        loading,
+        pokemon,
+        SelectedPokemon,
+        getPokemon
     }
 
     return (
-        <Context.Provider value={{ pokemonValue, SelectedPokemon }}>
+        <Context.Provider value={value}>
             {children}
         </Context.Provider>
     )
