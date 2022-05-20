@@ -62,7 +62,7 @@ const Header: React.FC<PropsHeader> = ({
                             <Image source={require('../../../Assets/pokebola.png')}
                                 style={{
                                     marginLeft: 10,
-                                    width: 210,
+                                    width: 209,
                                     height: 200,
                                     tintColor: '#bbbbbb1f'
                                 }}
@@ -75,15 +75,13 @@ const Header: React.FC<PropsHeader> = ({
                                     height='61px'
                                     alignItems='center'
                                     justifyContent='center'
-                                    width='61px'
+                                    width='60px'
                                     marginRight='10px'
-                                    borderWidth='2px'
                                     borderRadiusTopLeft='10px'
                                     borderRadiusTopRight='10px'
                                     borderRadiusBottomLeft='10px'
                                     borderRadiusBottomRight='10px'
-                                    borderColor='#fff'
-                                    backgroundColor='#c6c6c6'>
+                                    backgroundColor='#bdbdbd'>
                                     <Image source={require('../../../Assets/ash.webp')}
                                         style={{
                                             width: 65,
