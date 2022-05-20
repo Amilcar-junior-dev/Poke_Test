@@ -1,4 +1,4 @@
-export interface PropsHome {
+export interface PropsContext {
     user?: string
     message?: string
     title?: string
