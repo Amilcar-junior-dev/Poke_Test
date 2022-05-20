@@ -2,6 +2,7 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { BoxContainer, Box } from '../../Atomic/Atoms/Box'
 import { Text } from '../../Atomic/Atoms/Text';
+import PokeCard from '../../Atomic/Molecules/Cards/PokeCard'
 import Header from '../../Atomic/Molecules/Header';
 import Footer from '../../Atomic/Molecules/Footer';
 import { PropsHome } from './Models';
@@ -23,10 +24,14 @@ const Home: React.FC<PropsHome> = ({
                     {title}
                 </Text>
             </Box>
+            <Box
+                pd={10}
+                height='330px'>
+                <PokeCard />
 
-            <Body>
+            </Box>
 
-            </Body>
+            <Body />
             <Footer />
         </BoxContainer>
     )

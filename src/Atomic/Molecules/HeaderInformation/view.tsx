@@ -10,6 +10,7 @@ const HeaderInformation: React.FC<PropsHeaderInformation> = ({
     title,
     type,
     power,
+    pokemonValue
 }) => {
     return (
         <Box height='296px'>

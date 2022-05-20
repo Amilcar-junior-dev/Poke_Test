@@ -5,7 +5,7 @@ import { Image } from '../../Atoms/Image'
 import { PropsPokemon } from './Models';
 
 const ViewPokemon: React.FC<PropsPokemon> = ({
-   
+pokemonValue
 }) => {
     return (
         <Box 
