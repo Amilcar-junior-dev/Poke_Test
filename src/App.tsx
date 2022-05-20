@@ -5,10 +5,8 @@ import Context from './Context';
 const App = () => {
     return (
         <Context>
-              <Routes />
+            <Routes />
         </Context>
-           
-       
     )
 }
 export default App;

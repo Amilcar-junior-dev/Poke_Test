@@ -1,17 +1,14 @@
-import React,{useContext} from 'react';
+import React from 'react';
 import ViewPageInitial from './view';
 
-import { PropsPageInitial} from './Models';
+import { PropsPageInitial } from './Models';
 
 const PageInitial: React.FC<PropsPageInitial> = ({
-   
+
 }) => {
-    
+
     return (
-        <ViewPageInitial
-        
-           
-        />
+        <ViewPageInitial />
     )
 }
 export default PageInitial;
