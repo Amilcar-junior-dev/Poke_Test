@@ -4,7 +4,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Context from '../../Context/index';
 
 import Home from '../../Pages/Home';
-import Details from '../../Pages/Details'
+import Details from '../../Pages/Details';
+import PageInitial from '../../Pages/PageInitial';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,10 +14,11 @@ export default function () {
         <NavigationContainer>
             
 
-            <Stack.Navigator initialRouteName='Home' screenOptions={{ headerShown: false }} >
+            <Stack.Navigator initialRouteName='PageInitial' screenOptions={{ headerShown: false }} >
 
                 <Stack.Screen name='Home' component={Home} />
                 <Stack.Screen name='Details' component={Details} />
+                <Stack.Screen name='PageInitial' component={PageInitial} />
 
             </Stack.Navigator>
 
