@@ -1,15 +1,12 @@
-import React, { useContext} from 'react';
+import React from 'react';
 import ViewPokemon from './view';
-import { Context } from '../../../Context';
 import { PropsPokemon } from './Models';
 
-const Pokemon:React.FC<PropsPokemon> = ({
-children
+const Pokemon: React.FC<PropsPokemon> = ({
+    children
 }) => {
-    const pokemonValue = useContext(Context);
     return (
-        <ViewPokemon
-        pokemonValue={pokemonValue}>
+        <ViewPokemon>
             {children}
         </ViewPokemon>
     )

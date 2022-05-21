@@ -1,6 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { PropsContext } from './Models';
-import { useNavigation } from '@react-navigation/native';
 import api from '../Utils/axios';
 
 export const Context = createContext<PropsContext>({});
@@ -69,11 +68,11 @@ const ContextProvider = ({
         pokemon,
         SelectedPokemon,
         getPokemon,
-       
+
     }
 
-     
-    
+
+
     return (
         <Context.Provider value={value}>
             {children}

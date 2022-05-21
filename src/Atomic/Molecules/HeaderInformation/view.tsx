@@ -1,27 +1,24 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Box } from '../../Atoms/Box';
 import { Text } from '../../Atoms/Text';
-import { PropsHeaderInformation } from './Models';
-import { Context } from '../../../Context';
+import { PropsHeaderInformationVIew} from './Models';
 
 import IconLeftArrow from 'react-native-vector-icons/MaterialIcons';
 import IconHeart from 'react-native-vector-icons/AntDesign';
 
-const HeaderInformation: React.FC<PropsHeaderInformation> = ({
+const HeaderInformation: React.FC<PropsHeaderInformationVIew> = ({
     title,
     type,
     power,
-    color,
 }) => {
-    const { pokemon } = useContext(Context);
     const navigation = useNavigation();
 
     return (
         <Box height='296px'>
             <Box
-                backgroundColor='#20f5ca'
+             
                 height='280px'
                 pd={10} >
                 <Box

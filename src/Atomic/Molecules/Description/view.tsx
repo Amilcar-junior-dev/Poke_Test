@@ -1,11 +1,11 @@
 import React from 'react';
 import { Box } from '../../Atoms/Box';
 import { Text } from '../../Atoms/Text';
-import { PropsDescription } from './Models';
+import { PropsDescriptionView } from './Models';
 
-const Description: React.FC<PropsDescription> = ({
+const Description: React.FC<PropsDescriptionView> = ({
     title,
-    description
+    description,
 }) => {
     return (
         <Box height='160px'>
