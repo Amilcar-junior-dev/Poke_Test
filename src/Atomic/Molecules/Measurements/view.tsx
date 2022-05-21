@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box } from '../../Atoms/Box';
 import { Text } from '../../Atoms/Text';
 import { PropsDescription } from './Models';
 
 import IcoWeight from 'react-native-vector-icons/FontAwesome5';
 import IcoHeight from 'react-native-vector-icons/MaterialIcons';
+import { Context } from '../../../Context';
 
 const Measurements: React.FC<PropsDescription> = ({
     weight,
     height,
     power,
 }) => {
+    const {pokemon}=useContext(Context);
     return (
         <Box
             height='60px'
@@ -35,7 +37,8 @@ const Measurements: React.FC<PropsDescription> = ({
                         justifyContent='center'>
                         <Text fSize={15}
                             fWeight='bold'>
-                            6.9 kg
+                                {weight} kg
+                       
                         </Text>
                     </Box>
                 </Box>
@@ -63,7 +66,7 @@ const Measurements: React.FC<PropsDescription> = ({
                         justifyContent='center'>
                         <Text fSize={15}
                             fWeight='bold'>
-                            0.7 m
+                       {height} m
                         </Text>
                     </Box>
                 </Box>
@@ -92,7 +95,7 @@ const Measurements: React.FC<PropsDescription> = ({
 
                             fSize={15}
                             fWeight='bold'>
-                            Chicote de vinha
+                            {power}
                         </Text>
                     </Box>
                 </Box>

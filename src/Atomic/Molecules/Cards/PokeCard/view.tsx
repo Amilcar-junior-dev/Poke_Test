@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Box } from '../../../Atoms/Box';
 import { Text } from '../../../Atoms/Text'
 import { Image } from '../../../Atoms/Image';
@@ -11,11 +12,11 @@ const PokeCard: React.FC<PropsPokeCard> = ({
     type,
     color,
     image,
-    onPress
+    onPress,
 }) => {
-
+   
     return (
-        <BoxTouch onPress={onPress}
+        <BoxTouch onPress={ onPress }
         width='40%'
         height='120px'
         marginBottom='10px'

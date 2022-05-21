@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ViewDescription from './view'
 import { PropsDescription } from './Models'
+import { Context } from '../../../Context';
 
 const Description: React.FC<PropsDescription> = ({
 children
 }) => {
+    const {pokemon}=useContext(Context)
     return (
         <ViewDescription
             title='Descrição'

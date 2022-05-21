@@ -1,17 +1,17 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Box } from '../../Atoms/Box';
 import { Text } from '../../Atoms/Text';
 import { PropsHeaderInformation } from './Models';
+import { Context } from '../../../Context';
 
 import IconLeftArrow from 'react-native-vector-icons/MaterialIcons';
 import IconHeart from 'react-native-vector-icons/AntDesign';
 
 const HeaderInformation: React.FC<PropsHeaderInformation> = ({
-    title,
     type,
     power,
-    pokemonValue
 }) => {
+    const {pokemon}=useContext(Context)
     return (
         <Box height='296px'>
             <Box
@@ -30,7 +30,7 @@ const HeaderInformation: React.FC<PropsHeaderInformation> = ({
                     <Text
                         fSize={50}
                         color='#fff'>
-                        {title}
+                        {pokemon.name}
                     </Text>
                 </Box>
 
@@ -50,7 +50,7 @@ const HeaderInformation: React.FC<PropsHeaderInformation> = ({
                         borderRadiusBottomRight='20px'
                         backgroundColor='#8dfbe5'>
                         <Text fSize={15} color='#fff' fWeight='bold'>
-                            {type}
+                            {pokemon.types[0].type.name}
                         </Text>
                     </Box>
                     <Box
@@ -64,7 +64,8 @@ const HeaderInformation: React.FC<PropsHeaderInformation> = ({
                         borderRadiusBottomRight='20px'
                         backgroundColor='#8dfbe5'>
                         <Text fSize={15} color='#fff' fWeight='bold'>
-                            {power}
+                            {pokemon.abilities[0].ability.name 
+}
                         </Text>
                     </Box>
                 </Box>
