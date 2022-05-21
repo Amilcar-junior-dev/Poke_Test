@@ -15,6 +15,16 @@ const Caracteristics: React.FC<PropsCaracteristics> = ({
     gender,
     itemGenderX,
     itemGenderY,
+    attack,
+    valueAttack,
+    defense,
+    valueDefense,
+    VIattack,
+    valueVIattack,
+    VIdefense,
+    valueVIdefense,
+    velocity,
+    valueVelocity,
     itemCaracteristics,
     strengthsAndWeaknesses,
     caracteristicsStrengthsAndWeaknesses,
@@ -61,9 +71,8 @@ const Caracteristics: React.FC<PropsCaracteristics> = ({
                     </Text>
                 </Box>
             </Box>
-
-            {itemCaracteristics.map((item, index) => (
-                <Box key={index}
+        
+                <Box 
                     height='30px'
                     alignItems='center'
                     flexDirections='row'
@@ -73,22 +82,141 @@ const Caracteristics: React.FC<PropsCaracteristics> = ({
                         width='60px'
                         height='100%'>
                         <Text fSize={12}>
-                            {item.name}
+                            {attack}
                         </Text>
                     </Box>
-
-                    <Box
+                    <Box 
                         height='100%'
                         width='100px'
                         alignItems='center'
                         justifyContent='center'>
                         <Text>
-                            {item.value}
+                            {valueAttack}
                         </Text>
                     </Box>
-                    <Progress.Bar progress={item.value / 100} width={200} color={item.color} />
+                    <Progress.Bar progress={ valueAttack/100 } width={200} color={'#ef4545'} />
                 </Box>
-            ))}
+                <Box 
+                    height='30px'
+                    alignItems='center'
+                    flexDirections='row'
+                    marginTop='1px'>
+                    <Box
+                        justifyContent='center'
+                        width='60px'
+                        height='100%'>
+                        <Text fSize={12}>
+                            {defense}
+                        </Text>
+                    </Box>
+                    <Box 
+                        height='100%'
+                        width='100px'
+                        alignItems='center'
+                        justifyContent='center'>
+                        <Text>
+                            {valueDefense}
+                        </Text>
+                    </Box>
+                    <Progress.Bar progress={valueDefense/100 } width={200} color={'#45efb1'} />
+                </Box>
+                <Box 
+                    height='30px'
+                    alignItems='center'
+                    flexDirections='row'
+                    marginTop='1px'>
+                    <Box
+                        justifyContent='center'
+                        width='60px'
+                        height='100%'>
+                        <Text fSize={12}>
+                            {VIattack}
+                        </Text>
+                    </Box>
+                    <Box 
+                        height='100%'
+                        width='100px'
+                        alignItems='center'
+                        justifyContent='center'>
+                        <Text>
+                            {valueVIattack}
+                        </Text>
+                    </Box>
+                    <Progress.Bar progress={valueVIattack/100 } width={200} color={'#fed91e'} />
+                </Box>
+                <Box 
+                    height='30px'
+                    alignItems='center'
+                    flexDirections='row'
+                    marginTop='1px'>
+                    <Box
+                        justifyContent='center'
+                        width='60px'
+                        height='100%'>
+                        <Text fSize={12}>
+                            {VIdefense}
+                        </Text>
+                    </Box>
+                    <Box 
+                        height='100%'
+                        width='100px'
+                        alignItems='center'
+                        justifyContent='center'>
+                        <Text>
+                            {valueVIdefense}
+                        </Text>
+                    </Box>
+                    <Progress.Bar progress={valueVIdefense/100 } width={200} color={'#09ffef'} />
+                </Box>
+                <Box 
+                    height='30px'
+                    alignItems='center'
+                    flexDirections='row'
+                    marginTop='1px'>
+                    <Box
+                        justifyContent='center'
+                        width='60px'
+                        height='100%'>
+                        <Text fSize={12}>
+                            {velocity}
+                        </Text>
+                    </Box>
+                    <Box 
+                        height='100%'
+                        width='100px'
+                        alignItems='center'
+                        justifyContent='center'>
+                        <Text>
+                            {valueVelocity}
+                        </Text>
+                    </Box>
+                    <Progress.Bar progress={valueVelocity/100 } width={200} color={'#3c7f04'} />
+                </Box>
+                <Box 
+                    height='30px'
+                    alignItems='center'
+                    flexDirections='row'
+                    marginTop='1px'>
+                    <Box
+                        justifyContent='center'
+                        width='60px'
+                        height='100%'>
+                        <Text fSize={12}>
+                            Total
+                        </Text>
+                    </Box>
+                    <Box 
+                        height='100%'
+                        width='100px'
+                        alignItems='center'
+                        justifyContent='center'>
+                        <Text>
+                            {parseInt(valueAttack + valueDefense + valueVIattack + valueVIdefense + velocity) }
+                        </Text>
+                    </Box>
+                    <Progress.Bar progress={parseInt(valueAttack + valueDefense + valueVIattack + valueVIdefense + velocity)/500 } width={200} color={'#b303ff'} />
+                </Box>
+           
             <Box
                 marginTop='10px'
                 height='150px'>
