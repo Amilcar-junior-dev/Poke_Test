@@ -1,5 +1,6 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
+
 import { BoxContainer, Box } from '../../Atomic/Atoms/Box';
 import Description from '../../Atomic/Molecules/Description';
 import Measurements from '../../Atomic/Molecules/Measurements';
@@ -9,24 +10,25 @@ import Caracteristics from '../../Atomic/Molecules/Characteristics';
 import { PropsDetails } from './Models';
 
 const Details: React.FC<PropsDetails> = ({
+    color
 }) => {
     return (
-        <BoxContainer
-            backgroundColor='#20f5ca'>
-            <HeaderInformation />
-            <Box
-                height='450px'
-                backgroundColor='#ffffff'
-                borderRadiusTopLeft='15px'
-                borderRadiusTopRight='15px'>
-                <Pokemon />
-                <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+            <BoxContainer
+                backgroundColor={color}>
+                <HeaderInformation />
+                <Box
+                    height='100%'
+                    backgroundColor='#ffffff'
+                    borderRadiusTopLeft='15px'
+                    borderRadiusTopRight='15px'>
+                    <Pokemon />
                     <Description />
                     <Measurements />
                     <Caracteristics />
-                </ScrollView>
-            </Box>
-        </BoxContainer>
+                </Box>
+            </BoxContainer>
+        </ScrollView>
     )
 }
 export default Details;

@@ -1,11 +1,7 @@
 export interface PropsHeaderInformation {
+}
+export interface PropsHeaderInformationVIew{
     title?: string
-    items?: string | number
     power?: string | number
-    children?: any
     type?: string
-    pokemonValue?: any
-    pokemon?: any
-    name?: any
-    color?: string
 }

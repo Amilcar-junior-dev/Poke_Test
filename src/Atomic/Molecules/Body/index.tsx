@@ -4,7 +4,6 @@ import { PropsBody } from './Models';
 
 const Body:React.FC<PropsBody>=({
 children,
-backgroundColor,
 })=>{
     return(
         <ViewBody >

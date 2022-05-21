@@ -209,10 +209,10 @@ const Caracteristics: React.FC<PropsCaracteristics> = ({
                     alignItems='center'
                     justifyContent='center'>
                     <Text>
-                        {parseInt(valueAttack + valueDefense + valueVIattack + valueVIdefense + velocity)}
+                        {(valueAttack + valueDefense + valueVIattack + valueVIdefense)  }
                     </Text>
                 </Box>
-                <Progress.Bar progress={parseInt(valueAttack + valueDefense + valueVIattack + valueVIdefense + velocity) / 500} width={200} color={'#b303ff'} />
+                <Progress.Bar progress={(valueAttack + valueDefense + valueVIattack + valueVIdefense ) / 500} width={200} color={'#b303ff'} />
             </Box>
 
             <Box

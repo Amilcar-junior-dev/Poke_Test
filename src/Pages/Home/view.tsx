@@ -13,20 +13,18 @@ import { useNavigation } from '@react-navigation/native';
 
 
 const Home: React.FC<PropsHome> = ({
-    title,
-    navega
+    title
 }) => {
     const {
         pokemonValue,
         SelectedPokemon,
         getPokemon,
-        pokemon,
         loading,
     } = useContext(Context);
+    
     const { height } = Dimensions.get("window")
   
     const navigation = useNavigation();
-   
 
     return (
         <FlatList
@@ -77,7 +75,7 @@ const Home: React.FC<PropsHome> = ({
                     image={item.sprites.other.home.front_default}
                     onPress={() => {
                         SelectedPokemon(index)
-                        navigation.navigate('Details')
+                        navigation.navigate('Details', {id:index})
                     }} />
             )}>
         </FlatList >

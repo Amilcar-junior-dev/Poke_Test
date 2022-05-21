@@ -1,7 +1,6 @@
 import React from 'react';
 import ViewPokeCard from './view'
 import { PropsPokeCard } from './Models'
-import { useNavigation } from '@react-navigation/native';
 
 const PokeCard: React.FC<PropsPokeCard> = ({
     name,
@@ -9,14 +8,8 @@ const PokeCard: React.FC<PropsPokeCard> = ({
     type,
     color,
     image,
-    onPress
+    onPress,
 }) => {
-    const navigation=useNavigation()
-
-    function navega(){
-
-        navigation.navigate('Details')
-    }
 
     const randomColor = (): string => {
         if (parseInt(color) % 4 == 0) {
@@ -40,7 +33,6 @@ const PokeCard: React.FC<PropsPokeCard> = ({
             image={image}
             color={randomColor()}
             onPress={onPress}
-            navega={navega}
         />
     )
 }

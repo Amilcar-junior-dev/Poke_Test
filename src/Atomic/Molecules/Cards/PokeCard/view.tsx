@@ -1,5 +1,4 @@
-import React, { useContext, useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import React from 'react';
 import { Box } from '../../../Atoms/Box';
 import { Text } from '../../../Atoms/Text'
 import { Image } from '../../../Atoms/Image';
