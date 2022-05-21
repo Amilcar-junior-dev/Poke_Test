@@ -18,4 +18,5 @@ export interface PropsDetails {
     sum?: string | number
     strengthsAndWeaknesses?: string
     pokemonValue?: any
+    pokemon?:any
 }

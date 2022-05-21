@@ -5,4 +5,5 @@ export interface PropsPokeCard {
     color?: string
     image?: string
     onPress?: ()=> void 
+    navega?: ()=> void
 }

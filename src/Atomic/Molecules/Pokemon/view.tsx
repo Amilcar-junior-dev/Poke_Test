@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import {  Box } from '../../Atoms/Box'
-import { Image } from '../../Atoms/Image'
+import { Image } from '../../Atoms/Image';
+import { Context } from '../../../Context';
 
 import { PropsPokemon } from './Models';
 
 const ViewPokemon: React.FC<PropsPokemon> = ({
-pokemonValue
 }) => {
+    const {pokemon}= useContext(Context);
     return (
         <Box 
         height='10px' 
         alignItems='center' 
         justifyContent='flex-end'>
-            <Image source={require('../../../Assets/buba.png')}
+            <Image source={{uri: pokemon.sprites.other.home.front_default}}
                 style={{
                     width: 138,
                     height: 120,

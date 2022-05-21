@@ -6,4 +6,8 @@ export interface PropsHome {
     results?: any
     pokemonValue?: any
     SelectedPokemon ?: any 
+    pokemon?: any
+    index?: any
+    navega?:()=> void
+    Details?: string
 }

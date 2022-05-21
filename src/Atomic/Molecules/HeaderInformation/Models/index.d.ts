@@ -5,4 +5,7 @@ export interface PropsHeaderInformation {
     children?: any
     type?: string
     pokemonValue?: any
+    pokemon?: any
+    name?: any
+    color?: string
 }

@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ViewMeasurements from './view'
 import { PropsDescription } from './Models'
+import { Context } from '../../../Context';
 
 const Measurements: React.FC<PropsDescription> = ({
     children
 }) => {
+    const {pokemon}=useContext(Context);
     return (
         <ViewMeasurements
-            weight='6.9 KG'
-            height=' 0.7 m'
-            power='Chicote de Vinha'
+            weight={ pokemon.weight}
+            height={pokemon.height}
+            power={pokemon.moves[0].move.name}
         >
             {children}
         </ViewMeasurements>

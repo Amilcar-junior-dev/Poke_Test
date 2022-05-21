@@ -9,20 +9,28 @@ import Header from '../../Atomic/Molecules/Header';
 import Footer from '../../Atomic/Molecules/Footer';
 import { PropsHome } from './Models';
 import { Context } from '../../Context';
+import { useNavigation } from '@react-navigation/native';
+
 
 const Home: React.FC<PropsHome> = ({
     title,
+    navega
 }) => {
     const {
         pokemonValue,
         SelectedPokemon,
         getPokemon,
+        pokemon,
         loading,
     } = useContext(Context);
     const { height } = Dimensions.get("window")
+  
+    const navigation = useNavigation();
+   
 
     return (
         <FlatList
+        
             data={pokemonValue}
             ListHeaderComponent={
                 <>
@@ -54,8 +62,10 @@ const Home: React.FC<PropsHome> = ({
             }}
             columnWrapperStyle={{
                 width: '100%',
+                height: normalize(height / 7),
                 justifyContent: 'center',
                 alignItems: 'center',
+                marginBottom: Platform.OS === 'ios' ? 16 : 30
             }}
             renderItem={({ item, index }) => (
                 <PokeCard
@@ -65,9 +75,13 @@ const Home: React.FC<PropsHome> = ({
                     power={item.abilities[0].ability.name}
                     color={index.toString()}
                     image={item.sprites.other.home.front_default}
-                    onPress={() => SelectedPokemon(index)} />
+                    onPress={() => {
+                        SelectedPokemon(index)
+                        navigation.navigate('Details')
+                    }} />
             )}>
         </FlatList >
     )
 }
+
 export default Home;
