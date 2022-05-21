@@ -1,4 +1,6 @@
 import React,{useContext} from 'react';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { Box } from '../../Atoms/Box';
 import { Text } from '../../Atoms/Text';
 import { PropsHeaderInformation } from './Models';
@@ -8,10 +10,14 @@ import IconLeftArrow from 'react-native-vector-icons/MaterialIcons';
 import IconHeart from 'react-native-vector-icons/AntDesign';
 
 const HeaderInformation: React.FC<PropsHeaderInformation> = ({
+    title,
     type,
     power,
+    color,
 }) => {
-    const {pokemon}=useContext(Context)
+    const {pokemon}=useContext(Context);
+    const navigation = useNavigation();
+  
     return (
         <Box height='296px'>
             <Box
@@ -20,17 +26,20 @@ const HeaderInformation: React.FC<PropsHeaderInformation> = ({
                 pd={10} >
                 <Box
                     justifyContent='space-between'
-                    height='30px'
+                    height='40px'
                     flexDirections='row'>
-                    <IconLeftArrow name='arrow-back' size={40} color='#ffffff' />
+                        <TouchableOpacity onPress={()=> navigation.navigate('Home')}>
+                              <IconLeftArrow name='arrow-back' size={40} color='#ffffff' />
+                        </TouchableOpacity>
+                  
                     <IconHeart name='hearto' size={25} color='#ffffff' />
                 </Box>
-                <Box
-                    height='60px'>
+                <Box 
+                    height='80px'>
                     <Text
                         fSize={50}
                         color='#fff'>
-                        {pokemon.name}
+                        {title}
                     </Text>
                 </Box>
 
@@ -40,7 +49,7 @@ const HeaderInformation: React.FC<PropsHeaderInformation> = ({
                     alignItems='center'>
                     <Box
                         height='30px'
-                        width='80px'
+                        width='100px'
                         marginRight='10px'
                         alignItems='center'
                         justifyContent='center'
@@ -48,24 +57,23 @@ const HeaderInformation: React.FC<PropsHeaderInformation> = ({
                         borderRadiusTopRight='20px'
                         borderRadiusBottomLeft='20px'
                         borderRadiusBottomRight='20px'
-                        backgroundColor='#8dfbe5'>
-                        <Text fSize={15} color='#fff' fWeight='bold'>
-                            {pokemon.types[0].type.name}
+                        backgroundColor= '#d8faf354'>
+                        <Text fSize={12} color='#fff' fWeight='bold'>
+                            {type}
                         </Text>
                     </Box>
                     <Box
                         height='30px'
-                        width='80px'
+                        width='100px'
                         alignItems='center'
                         justifyContent='center'
                         borderRadiusTopLeft='20px'
                         borderRadiusTopRight='20px'
                         borderRadiusBottomLeft='20px'
                         borderRadiusBottomRight='20px'
-                        backgroundColor='#8dfbe5'>
-                        <Text fSize={15} color='#fff' fWeight='bold'>
-                            {pokemon.abilities[0].ability.name 
-}
+                        backgroundColor='#d8faf354'>
+                        <Text fSize={12} color='#fff' fWeight='bold'>
+                            {power}
                         </Text>
                     </Box>
                 </Box>

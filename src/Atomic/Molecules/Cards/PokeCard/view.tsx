@@ -25,7 +25,8 @@ const PokeCard: React.FC<PropsPokeCard> = ({
         borderRadiusTopRight='10px'
         borderRadiusBottomLeft='10px'
         borderRadiusBottomRight='10px'>
-            <Box backgroundColor={color}
+            <Box 
+                backgroundColor={color}
                 pd={10}
                 width='100%'
                 height='120px'
@@ -97,7 +98,6 @@ const PokeCard: React.FC<PropsPokeCard> = ({
                 </Box>
             </Box>
         </BoxTouch>
-
     )
 }
 export default PokeCard;

@@ -24,44 +24,7 @@ const Home: React.FC<PropsHome> = ({
         loading,
     } = useContext(Context);
     const { height } = Dimensions.get("window")
-    console.log(pokemon)
-     //  console.log(pokemon.stats[5].base_stat)
-
-    /*CARACERÍSTICAS
-        ATAQUE ->   pokemon.stats[1].stat.name
-        NUMERO ATAQUE -> pokemon.stats[1].base_stat
-
-        DEFESA -> pokemon.stats[2].stat.name
-        NUMERO DEFESA -> pokemon.stats[2].base_stat
-
-        ATAQUE ESPECIAL -> pokemon.stats[3].stat.name
-        NUMERO ATAQUE ESPECIAL -> pokemon.stats[3].base_stat
-
-
-        DEFESA ESPECIAL -> pokemon.stats[4].stat.name
-        NUMERO DEFESA ESPECIAL  -> pokemon.stats[4].base_stat
-
-        VELOCIDADE -> pokemon.stats[5].stat.name
-        NUMERO VELOCIDADE -> pokemon.stats[5].base_stat
-
-
-    */
-
-    // DESCRIÇÃO POKEMON => pokemon.species => URL => flavor_text_entries[6].flavor_text
-
-    // PODER PRINCIPAL => pokemon.moves[0].move.name
-
-    //PESO POKEMON => pokemon.weight
-
-    // ALTURA POKEMON => pokemon.height
-
-    // IMAGEM POKEMON => pokemon.sprites.other.home.front_default
-
-    // NOME POKEMON => pokemon.name
-
-    // PODER POKEMON => pokemon.abilities[0].ability.name 
-
-    //TIPO POKEMON => pokemon.types[0].type.name
+  
     const navigation = useNavigation();
    
 
