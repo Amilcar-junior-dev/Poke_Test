@@ -64,7 +64,7 @@ const Header: React.FC<PropsHeader> = ({
                                     marginLeft: 10,
                                     width: 209,
                                     height: 200,
-                                    tintColor: '#bbbbbb1f'
+                                    tintColor: '#f8f8f831'
                                 }}
                                 resizeMode='contain' />
                             <Box height='65px'

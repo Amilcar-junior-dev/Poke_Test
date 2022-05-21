@@ -9,7 +9,7 @@ const Apresentation: React.FC<PropsApresentation> = ({
     
     return (
         <ViewApresentation
-        load='Caregando...'
+        load='Carregando...'
         />
     )
 }

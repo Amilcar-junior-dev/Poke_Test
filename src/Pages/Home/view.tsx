@@ -30,6 +30,7 @@ const Home: React.FC<PropsHome> = ({
 
     return (
         <FlatList
+        
             data={pokemonValue}
             ListHeaderComponent={
                 <>
