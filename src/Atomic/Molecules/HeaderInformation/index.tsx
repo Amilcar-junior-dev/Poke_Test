@@ -1,37 +1,20 @@
-import React,{useContext}from 'react';
+import React, { useContext } from 'react';
 import ViewHeaderInformation from './view';
 import { Context } from '../../../Context';
 import { PropsHeaderInformation } from './Models'
 
 const HeaderInformation: React.FC<PropsHeaderInformation> = ({
-children,
-color,
+    children,
 }) => {
-    const {pokemonValue, pokemon } = useContext(Context);
-    console.log(pokemon.name)
-
-    const randomColor = (): string => {
-        if (parseInt(color) % 4 == 0) {
-            return "#4de0ac"
-        }
-        if (parseInt(color) % 4 == 1) {
-            return "#C64B50"
-        }
-        if (parseInt(color) % 4 == 2) {
-            return "#77A4CE"
-        }
-
-        return "#FAE48B"
-    }
+    const { pokemonValue, pokemon } = useContext(Context);
 
     return (
         <ViewHeaderInformation
             pokemonValue={pokemonValue}
-            name = {pokemon}
+            name={pokemon}
             title={pokemon.name}
             type={pokemon.types[0].type.name}
-            power={pokemon.abilities[0].ability.name }
-            color={randomColor()}
+            power={pokemon.abilities[0].ability.name}
         >
             {children}
         </ViewHeaderInformation>

@@ -25,10 +25,8 @@ const Caracteristics: React.FC<PropsCaracteristics> = ({
     valueVIdefense,
     velocity,
     valueVelocity,
-    itemCaracteristics,
     strengthsAndWeaknesses,
     caracteristicsStrengthsAndWeaknesses,
-
 }) => {
     return (
         <Box

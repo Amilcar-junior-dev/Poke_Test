@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React, { useContext } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Box } from '../../Atoms/Box';
@@ -15,9 +15,9 @@ const HeaderInformation: React.FC<PropsHeaderInformation> = ({
     power,
     color,
 }) => {
-    const {pokemon}=useContext(Context);
+    const { pokemon } = useContext(Context);
     const navigation = useNavigation();
-  
+
     return (
         <Box height='296px'>
             <Box
@@ -28,13 +28,13 @@ const HeaderInformation: React.FC<PropsHeaderInformation> = ({
                     justifyContent='space-between'
                     height='40px'
                     flexDirections='row'>
-                        <TouchableOpacity onPress={()=> navigation.navigate('Home')}>
-                              <IconLeftArrow name='arrow-back' size={40} color='#ffffff' />
-                        </TouchableOpacity>
-                  
+                    <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                        <IconLeftArrow name='arrow-back' size={40} color='#ffffff' />
+                    </TouchableOpacity>
+
                     <IconHeart name='hearto' size={25} color='#ffffff' />
                 </Box>
-                <Box 
+                <Box
                     height='80px'>
                     <Text
                         fSize={50}
@@ -57,7 +57,7 @@ const HeaderInformation: React.FC<PropsHeaderInformation> = ({
                         borderRadiusTopRight='20px'
                         borderRadiusBottomLeft='20px'
                         borderRadiusBottomRight='20px'
-                        backgroundColor= '#d8faf354'>
+                        backgroundColor='#d8faf354'>
                         <Text fSize={12} color='#fff' fWeight='bold'>
                             {type}
                         </Text>
